@@ -1,0 +1,299 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Poppins:wght@300&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+html{
+    font-size: 62.5%;
+    font-family: 'Montserrat', sans-serif;
+    overflow-x: hidden;
+}
+body{
+    overflow-x: hidden;
+}
+a{
+    text-decoration: none;
+    color:black;
+    font-size: 1.4rem;
+}
+li{
+    list-style: none;
+    cursor: pointer;
+    font-size: 1.7rem;
+    font-weight: 700;
+    transition: all 0.4s;
+}
+
+.navbar-link:hover{
+    color: rgb(18, 155, 155);
+    
+}
+.header{
+    height: 12vh;
+    width:100vw;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #dfdfe0;
+    background-image: linear-gradient(180deg, rgb(218, 228, 231), rgb(177, 245, 245));
+    padding: 0 4rem;
+
+}
+.logo{
+    /* background-color: red; */
+    font-size: 2.5rem;
+    font-weight: 900;
+}
+.navbar-list{
+    display: flex;
+    gap: 5rem;
+} 
+.search-bar{
+    padding: .45rem;
+    border-radius:5px;
+    margin-right: 10px;
+}
+input{
+    padding: 4px 10px;
+}
+.btn{
+    padding: .45rem;
+    border-radius:8px;
+    width:8rem;
+    font-size: 1.4rem;
+    color:white ;
+    background-color: rgb(18, 155, 155);
+    transition: all 0.3s ease-in-out;
+}
+.btn:hover{
+    background-color: white;
+    color: rgb(18, 155, 155);
+    border: 1px solid black;
+}
+/* moblie hamburger css */
+.burger{
+    display: none;
+    cursor: pointer;
+    background-color: transparent;
+    border: none;
+    
+}
+.burger-icon{
+    font-size: 20px;
+   
+}
+
+/* .close-burger-icon{ */
+    /* display: inline-block; */
+    /* z-index: 3333333333333; */
+    
+/* } */
+
+/* css for mainsection area */
+.main{
+    /* display: flex; */
+
+}
+.main-area{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 8rem;
+}
+/* css for left main area  */
+.main-left-area h1{
+    font-size: 2rem;
+}
+.main-left-area h1 span{
+    color: rgb(18, 155, 155);
+    font-weight: 900;
+    background-color: #dfdfe0;
+    padding: 3px 11px;
+    font-size: 4.5rem;
+    line-height: 64px;
+    margin: -2px 11px;
+}
+.main-left-area p{
+    margin-top: 2rem;
+    font-size: 1.5rem;
+    font-weight:500;
+}
+.main-left-area p span{
+    color: rgb(18, 155, 155);
+    font-weight:900;
+    /* background-color: #dfdfe0; */
+    line-height: 24px;
+    font-size: 1.8rem;
+
+}
+/* css for right main area */
+.main-right-area{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3rem;
+}
+.main-right-area img{
+    height: 300px;
+    width: 300px;
+}
+
+  
+
+.main-right-area button {
+    
+    border-radius: 10px;
+    width: 13rem;
+    font-size: 1.7rem;
+    color: white;
+    background-color: rgb(18, 155, 155);
+    transition: all 0.4s ease-in-out;
+    cursor: pointer;
+}
+.main-right-area button:hover{
+    color: rgb(18, 155, 155);
+    background-color: white;
+}
+
+/* footer css */
+.footer{
+    display: flex;
+    justify-content:space-around;
+    align-items: center;
+    margin-top: 6rem;
+}
+.footer .footer-list ul{
+    display: flex;
+    gap: 6rem; 
+}
+.footer .footer-list ul a{
+    font-size: 3rem;
+    transition: all 0.3s ;
+}
+.footer .footer-list ul a:hover{
+    font-size: 3.2rem;
+}
+.footer div p{
+    font-size: 1.4rem;
+    font-weight: 600;
+}
+
+
+/* css for responsive navbar */
+@media (max-width:804px){
+    .header{
+        position: relative;
+
+    }
+    .burger{
+        display: block;
+        border: 2px solid black;
+        
+    }
+
+    .navbar{
+        height: 100vh;
+        width: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-image: linear-gradient(180deg, rgb(218, 228, 231), rgb(18, 155, 155));
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transform: translateX(100%);
+        transition: all 0.6s linear;
+        /* for hidden navbar here we donit use display none..we use following */
+        visibility: hidden;
+        opacity: 0;
+        pointer-events: none;
+
+    }
+  
+    
+     .navbar-list{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center; 
+}
+.navbar-list .navbar-link{
+    flex-direction: column;
+    align-items: center;
+    font-size: 2.5rem;
+}
+.navbar-list .navbar-link:hover{
+     color: aqua;
+}
+
+
+  /* if active class present in header then we follow the css given below */
+  .active .navbar{
+    transform: translateX(0%);
+    opacity: 1;
+    pointer-events: auto;
+    visibility: visible;
+    
+}
+
+.active .burger .menu-burger-icon{
+    display: block;
+}
+/* .active .burger .close-burger-icon{
+    display: block;
+    
+}
+.active .burger .burger-icon [name="close-outline"]{
+    display: block;
+    
+} */
+
+}
+
+@media (max-width:670px){
+    .main-area{
+        display: flex;
+        flex-direction: column;
+        justify-content:center;
+        align-items: center;
+        margin-top: 8rem;
+    }
+    .main-left-area p{
+        margin-bottom: 4rem;
+        
+    }
+}
+@media (max-width:670px){
+    .header{
+        position: relative;
+    }
+    .search-feild{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 0.3rem;
+        position: relative;
+        top: 10rem;
+        z-index: -1;
+        
+    }
+    .main-left-area{
+        margin-top: 4rem;
+    }
+    .main-left-area h1{
+        text-align: center;
+        margin-top: 4rem;
+    }
+    .footer{
+        display: flex;
+        flex-direction: column;
+        justify-content:center;
+        align-items: center;
+        margin-top: 6rem;
+        margin-bottom: 2rem;
+        gap: 3rem;
+    }
+}
